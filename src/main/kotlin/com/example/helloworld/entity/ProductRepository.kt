@@ -1,5 +1,5 @@
-package com.example.helloworld.entity
+import com.example.helloworld.entity.Product
+import org.springframework.data.jpa.repository.JpaRepository
 
-class ProductRepository {
-
+interface ProductRepository : JpaRepository<Product, Long> {
 }

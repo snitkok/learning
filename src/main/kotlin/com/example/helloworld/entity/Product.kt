@@ -5,26 +5,23 @@ import com.example.helloworld.entity.enums.Type
 import jakarta.persistence.*
 
 @Entity
-//Do I use singular or plural here?
-@Table(name = "product")
-
-class Product
-    (
+@Table(name = "products")
+class Product(
     @Id
-//    What Generation TYpe should I assign
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val id: Int,
-    var actionValue: Int, //percentage for example
-    //    val value: Int? = null
-    val type: Type,
+    val id: Long? = null,
     val title: String,
-    @Enumerated( EnumType.STRING)
-    val action: Action, // increase
+    val type: Type,
+    val action: Action,
+    var actionValue: Int, //percentage for example
     val code: String,
 
-//or mappedby @Todo need more context here
+    ) {
+    @OneToMany(mappedBy = "product")
+    val prices: MutableList<Price> = mutableListOf()
 
-@OneToMany(mappedBy = "product")
-    val prices: List<Price>
+    fun addPrices(vararg newPrices: Price) {
+        prices.addAll(newPrices)
+    }
+}
 
-)

@@ -10,15 +10,15 @@ import jakarta.persistence.Table
 
 @Entity
 @Table(name = "prices")
-class Price {
+class Price(
+    val currency: String,
+    val amount: Int,
+    @ManyToOne
+    @JoinColumn(name = "product_id", referencedColumnName = "id")
+    var product: Product?
+) {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     val id: Long = 0
-    val currency: String = "" //@ToDo enum
-    val amount: Int = 0
-
-    @ManyToOne
-//    Do I need to join column or tables in general not just here ???
-    @JoinColumn(name = "product_id", referencedColumnName = "id")
-    val product: Product? = null
 }
+
