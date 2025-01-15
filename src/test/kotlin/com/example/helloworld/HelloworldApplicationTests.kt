@@ -8,6 +8,5 @@ class HelloworldApplicationTests {
 
 	@Test
 	fun contextLoads() {
-		// test code here
 	}
 }

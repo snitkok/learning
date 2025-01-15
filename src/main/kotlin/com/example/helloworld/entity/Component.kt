@@ -2,8 +2,8 @@ package com.example.helloworld.entity
 
 import jakarta.persistence.*
 
-@Entity
-@Table(name = "combo_products")
+//@Entity
+//@Table(name = "combo_products")
 class Component {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

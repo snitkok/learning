@@ -2,8 +2,8 @@ package com.example.helloworld.entity
 
 import jakarta.persistence.*
 
-@Entity
-@Table(name = "display")
+//@Entity
+//@Table(name = "display")
 class Display {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

@@ -16,12 +16,13 @@ class Product(
     var actionValue: Int, //percentage for example
     val code: String,
 
-    ) {
-    @OneToMany(mappedBy = "product")
-    val prices: MutableList<Price> = mutableListOf()
-
-    fun addPrices(vararg newPrices: Price) {
-        prices.addAll(newPrices)
-    }
-}
+    )
+//{
+//    @OneToMany(mappedBy = "product")
+//    val prices: MutableList<Price> = mutableListOf()
+//
+//    fun addPrices(vararg newPrices: Price) {
+//        prices.addAll(newPrices)
+//    }
+//}
 
